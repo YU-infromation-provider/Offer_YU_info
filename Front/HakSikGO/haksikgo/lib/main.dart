@@ -24,7 +24,7 @@ class HomeApp extends StatelessWidget {
             borderSide: BorderSide(color: Color(0xFF376860)),
           ),
           labelStyle: TextStyle(
-            color: Colors.black,
+            color: Colors.black, // 여기에서 색상을 원하는 색상으로 변경하세요.
           ),
         ),
         colorScheme: ColorScheme.fromSwatch()

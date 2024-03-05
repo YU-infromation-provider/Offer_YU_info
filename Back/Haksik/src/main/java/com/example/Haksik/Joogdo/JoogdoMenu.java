@@ -1,5 +1,6 @@
 package com.example.Haksik.Joogdo;
 
+import com.example.Haksik.MapConverter;
 import com.example.Haksik.StringListConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -19,6 +20,6 @@ public class JoogdoMenu {
 
     private String type;
 
-    @Convert(converter = StringListConverter.class)
+    @Convert(converter = MapConverter.class)
     private Map<String,Double> menu;
 }

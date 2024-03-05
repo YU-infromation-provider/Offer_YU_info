@@ -1,25 +1,31 @@
 package com.example.Haksik.User;
 
-import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
-
-@Entity
-@Getter
-@Setter
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
-
-    @Column(unique = true)
+    private String name;
+    private String email;
+    private String password;
     private String username;
 
-    @Column(unique = true)
-    private String name;
+    public User() {
 
-    private String password;
+    }
+    public User(String name,String email,String password,String username){
+        this.name=name;
+        this.email=email;
+        this.password=password;
+        this.username=username;
+    }
 
-    @Column(unique = true)
-    private String email;
+    public String getName(){
+        return name;
+    }
+    public String getEmail(){
+        return email;
+    }
+    public String getPassword(){
+        return password;
+    }
+    public String getUsername(){
+        return username;
+    }
 }

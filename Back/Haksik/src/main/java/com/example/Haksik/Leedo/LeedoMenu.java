@@ -1,5 +1,6 @@
 package com.example.Haksik.Leedo;
 
+import com.example.Haksik.MapConverter;
 import com.example.Haksik.StringListConverter;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -20,6 +21,6 @@ public class LeedoMenu {
 
     private String type;
 
-    @Convert(converter = StringListConverter.class)
+    @Convert(converter = MapConverter.class)
     private Map<String,Double> menu;
 }

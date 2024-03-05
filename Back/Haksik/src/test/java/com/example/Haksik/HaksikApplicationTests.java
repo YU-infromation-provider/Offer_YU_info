@@ -14,27 +14,17 @@ import java.util.*;
 @SpringBootTest
 class HaksikApplicationTests {
 	@Autowired
-	LeedoMenuRepository leedoMenuRepository;
+	StaffMenuRepository staffMenuRepository;
 
 	@Test
 	void contextLoads() {
-		leedoMenuRepository.deleteAll();
-		LeedoMenu m = new LeedoMenu();
-////		List<Map<String,Double>>list = new ArrayList<>();
-////		List<Map<String,Double>>list2 = new ArrayList<>();
-		Map<String,Double> a = new HashMap<>();
-////		Map<String,Double> a2 = new HashMap<>();
-////		Map<String,Double> a3 = new HashMap<>();
-		a.put("정식",6.0);
-		a.put("영대라면",3.2);
-		a.put("만두라면",3.4);
-//		System.out.println(a);
-////		list.add(a);
-////		list.add(a2);
-////		list.add(a3);
-		m.setType("정식/라면/찌개");
-		m.setDate("월");
-		m.setMenu(a);
-		leedoMenuRepository.save(m);
+		List<String> m = new ArrayList<>();
+		m.add("카레라이스");
+		m.add("제육볶음");
+		m.add("김치");
+		StaffMenu a = new StaffMenu();
+		a.setMenu(m);
+		staffMenuRepository.save(a);
+
 	}
 }

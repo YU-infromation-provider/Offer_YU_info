@@ -17,8 +17,6 @@ public class StaffMenu {
 
     private String date;
 
-    private double price;
-
     @Convert(converter = StringListConverter.class)
     private List<String> menu;
 }

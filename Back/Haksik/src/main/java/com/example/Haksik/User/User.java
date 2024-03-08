@@ -1,7 +1,6 @@
 package com.example.Haksik.User;
 
 public class User {
-    private String name;
     private String email;
     private String password;
     private String username;
@@ -9,16 +8,18 @@ public class User {
     public User() {
 
     }
-    public User(String name,String email,String password,String username){
-        this.name=name;
+    public User(String email,String password,String username){
         this.email=email;
         this.password=password;
         this.username=username;
     }
 
-    public String getName(){
-        return name;
+    public User(String email,String password){
+        this.email=email;
+        this.password=password;
+        this.username=null;
     }
+
     public String getEmail(){
         return email;
     }

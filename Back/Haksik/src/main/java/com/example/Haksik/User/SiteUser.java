@@ -15,9 +15,6 @@ public class SiteUser {
     @Column(unique = true)
     private String username;
 
-    @Column(unique = true)
-    private String name;
-
     private String password;
 
     @Column(unique = true)

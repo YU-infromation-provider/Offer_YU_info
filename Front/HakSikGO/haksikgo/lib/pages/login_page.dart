@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:haksikgo/pages/home_page.dart';
 import 'dart:async';
 import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const LoginApp());
@@ -26,19 +28,23 @@ class _LogInState extends State<LogIn> {
   final TextEditingController IDController = TextEditingController();
   final TextEditingController PWController = TextEditingController();
 
-  get http => null;
-
   Future<void> sendData() async {
     var response = await http.post(
-      Uri.parse('http://localhost:8080/data'),
+      Uri.parse('http://localhost:8080/user/login'),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, String>{
-        'ID': IDController.text,
-        'PW': PWController.text,
+        'email': IDController.text,
+        'password': PWController.text,
       }),
     );
+
+    if (response.body == '200') {
+      Navigator.of(context).push(
+        MaterialPageRoute(builder: (context) => const HomePage()),
+      );
+    }
   }
 
   @override

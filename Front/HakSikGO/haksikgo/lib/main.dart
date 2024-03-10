@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haksikgo/pages/home_page.dart';
 import 'package:haksikgo/pages/login_page.dart';
+import 'package:haksikgo/pages/register_page.dart';
 
 void main() {
   runApp(const HomeApp());
@@ -33,7 +34,8 @@ class HomeApp extends StatelessWidget {
       initialRoute: '/Home_Page', // 초기 화면 설정
       routes: {
         '/Home_Page': (context) => const HomePage(), // Home 페이지
-        '/login': (context) => const LoginApp(), // LoginPage로 이동
+        '/login': (context) => const LoginApp(),
+        '/register': (context) => const RegisterApp(), // LoginPage로 이동
       },
     );
   }

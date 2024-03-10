@@ -138,7 +138,7 @@ class _LogInState extends State<Register> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 30,
+              height: 15,
             ),
             const Center(
               child: Text(

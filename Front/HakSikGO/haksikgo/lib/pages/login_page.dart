@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:haksikgo/models/model.dart';
 import 'package:haksikgo/pages/home_page.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -30,9 +28,6 @@ class _LogInState extends State<LogIn> {
   final TextEditingController IDController = TextEditingController();
   final TextEditingController PWController = TextEditingController();
 
-  static const storage = FlutterSecureStorage();
-  dynamic userInfo = '';
-
   Future<void> sendData() async {
     var response = await http.post(
       Uri.parse('http://localhost:8080/user/login'),
@@ -46,12 +41,6 @@ class _LogInState extends State<LogIn> {
     );
 
     if (response.body == '200') {
-      var val = jsonEncode(Login(IDController.text, PWController.text));
-
-      await storage.write(
-        key: 'login',
-        value: val,
-      );
       Navigator.of(context).push(
         MaterialPageRoute(builder: (context) => const HomePage()),
       );

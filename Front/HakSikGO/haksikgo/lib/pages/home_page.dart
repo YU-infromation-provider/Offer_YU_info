@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+
+  static const storage = FlutterSecureStorage();
+  dynamic userInfo = '';
+  static String email = '';
+  _asyncMethod() async {
+    userInfo = await storage.read(key: 'login');
+    if (userInfo != null) {
+      email = userInfo['email'];
+    }
+  }
+}
+
+class _HomePageState extends State<HomePage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +73,7 @@ class HomePage extends StatelessWidget {
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.all(10.0),
               child: Text(
-                '기능추가할것',
+                "$email",
                 style: TextStyle(
                   color: Colors.grey[900],
                   fontSize: 16,

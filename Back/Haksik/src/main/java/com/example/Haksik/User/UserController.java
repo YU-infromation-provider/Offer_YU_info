@@ -16,7 +16,8 @@ import java.util.HashMap;
 public class UserController {
     private final UserService userService;
     private final UserRepository userRepository;
-    @PostMapping("/signup")
+
+    @PostMapping("/register")
     public void signup(@RequestBody User user){
         userService.create(user.getUsername(),user.getEmail(),user.getPassword());
     }

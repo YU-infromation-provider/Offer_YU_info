@@ -115,56 +115,24 @@ class _LogInState extends State<LogIn> {
                       children: [
                         TextButton(
                           onPressed: sendData,
-                          /*() {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return AlertDialog(
-                                  content: const Text(
-                                    '아이디 또는 비밀번호를 확인하세요.',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                  actions: <Widget>[
-                                    InkResponse(
-                                      onTap: () {
-                                        Navigator.of(context).pop();
-                                      },
-                                      containedInkWell: false,
-                                      highlightColor: Colors.grey,
-                                      radius: 24,
-                                      child: const Text(
-                                        'OK',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                  backgroundColor: const Color(0xFFDDE5E1),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.transparent),
-                            shadowColor:
-                                MaterialStateProperty.all(Colors.transparent),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ),
-                            ),
-                          ),*/
                           child: const Text(
-                            'Sign in',
+                            '로그인',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/register');
+                          },
+                          child: const Text(
+                            '회원가입',
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
